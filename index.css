@@ -1,0 +1,495 @@
+body {
+    margin:0;
+    background:mistyrose;
+    -webkit-transition: all 0.8s ease-out 0.8s ;
+    transition: all 0.8s ease-out 0.8s ;
+}
+body.content{
+    background:#312e2e;
+}
+body.end{
+    background: #0a325d;
+}
+
+/* wings */
+
+.wing {
+background:white;
+ border-radius: 12px 20px 60px 20px;
+ width:120px;
+ height:50px; margin-top:80px;
+ position:absolute;
+}
+
+/* right wing */
+
+.right {
+margin-left:-60px;
+left:50%;
+animation:flap1 1s infinite;
+border-bottom:3px solid rgba(0,0,0,.08);
+ border-radius: 12px 20px 60px 20px;
+transform:rotate(-10deg) translate(250px,0);
+}
+
+@keyframes flap1 {
+0% {
+    transform:rotate(-10deg) translate(250px,0);
+}
+
+50% {
+    transform:rotate(-5deg) translate(250px,0);
+}
+}
+.right:before {
+position:absolute;
+content:'';
+background:white;
+width:70%;
+height:70%;
+   border-bottom:3px solid rgba(0,0,0,.08);
+border-radius: 20px 20px 60px 20px;
+transform:rotate(20deg) translate(-1px,0);
+margin-top:38px;
+}
+
+.right:after {
+  position:absolute;
+content:'';
+background:white;
+width:40%;
+transform:rotate(29deg) translate(-8px,0);
+height:30%;
+   border-bottom:3px solid rgba(0,0,0,.08);
+border-radius: 0px 0px 60px 70px;
+margin-top:66px;
+}
+
+/* left wing */
+
+.left {
+border-radius:12px 20px 20px 60px;
+ margin-left:-60px;
+left:50%;
+ animation:flap2 1s infinite;
+  border-bottom:3px solid rgba(0,0,0,.08);
+transform:rotate(10deg) translate(-248px, 0);
+}
+
+@keyframes flap2 {
+0% {
+    transform:rotate(10deg) translate(-248px,0);
+}
+
+50% {
+    transform:rotate(5deg) translate(-248px,0);
+}
+}
+
+
+.left:before {
+position:absolute;
+content:'';
+background:white;
+width:70%;
+   border-bottom:3px solid rgba(0,0,0,.08);
+transform:translate(46%,0) rotate(-20deg);
+height:60%;
+  border-radius:12px 20px 70px 70px;
+margin-top:40px;
+}
+
+.left:after {
+  position:absolute;
+content:'';
+background:white;
+width:40%;
+   border-bottom:3px solid rgba(0,0,0,.08);
+height:30%;
+ transform:translate(164%,0) rotate(-34deg);
+ border-radius:0px 0px 70px 60px;
+margin-top:58px;
+}
+
+/* heart */
+
+.heart{
+cursor: pointer;
+position: absolute;
+width: 120px;
+z-index:99999;
+height: 100px;
+margin-left:-50px;
+left:50%;
+ animation: heart 1s infinite;
+transform:scale(.8);
+transition:.6s;
+margin-top:60px;
+
+}
+.heart:before,
+.heart:after{
+content: "";
+width: 50px;
+height: 80px;
+position: absolute;
+left: 50px;
+top: 0;
+border-radius: 50px 50px 6px 6px;
+background: crimson;
+transform: rotate(-45deg);
+transform-origin: 0 100%;
+}
+.heart:after{
+left: 0;
+transform: rotate(45deg);
+transform-origin :100% 100%;
+}
+.heart.content{
+    /* -webkit-transition: all 0.8s ease-out 0.8s ;
+    transition: all 0.8s ease-out 0.8s ; */
+    left: calc(100% - 106px);
+}
+@keyframes heart {
+0% {
+    transform: scale(.8) translate(0,0);
+}
+
+50% {
+    transform: scale(.92) translate(0, 12px);
+}
+
+100% {
+    transform:scale(.8);
+}
+}
+
+/* envelope */
+
+#envelope {
+background: white; 
+margin: 200px auto;
+height: 200px;
+position: relative;
+width: 320px;
+border-radius:8px;
+overflow:hidden;
+animation: floaty 1s infinite;
+}
+
+@keyframes floaty {
+0% {
+    transform:translate(0,0);
+}
+
+50% {
+    transform:translate(0, 12px);
+}
+}
+
+/* bottom, left, and right sides */
+.sides {
+border-color: transparent #fbfbfb #f7f7f7 #fcfcfc;
+border-style: solid;
+border-width: 90px 170px;
+bottom: 0;
+height: 0;
+left: 0;
+position: absolute;
+width: 0;
+}
+
+/* top side */
+
+.top {
+border-color: white transparent transparent;
+border-style: solid;
+border-width: 108px 140px 90px 140px;
+height: 0;
+left: 0;
+position: absolute;
+top: 0;
+transform-origin: 50% 0;
+width: 0;
+}
+
+/* lefttop */
+#left_top {
+    position: absolute;
+    z-index: 100;
+    -webkit-transition: all 0.8s ease-out 0.8s ;
+    transition: all 0.8s ease-out 0.8s ;
+    opacity: 1;
+}
+svg path {
+  fill:#312e2e;
+  stroke: #ff5555;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1700;
+  stroke-dashoffset: 1700;
+  -webkit-animation: dash 12s linear forwards;
+  animation: dash 12s linear forwards;
+}
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.hide{
+    display: none;
+    opacity: 0;
+}
+/* lefttop */
+
+/* firework */
+
+/* body {
+	background: #000;
+	margin: 0;
+} */
+
+canvas {
+	cursor: crosshair;
+	display: block;
+}
+/* firework */
+
+
+/* 内容 */
+
+h1,
+p {
+	font-family: 'Hind', sans-serif;
+}
+
+p{
+	text-indent: 50px;
+}
+
+h1 {
+	font-weight: 200;
+}
+
+body {
+	margin: 0px;
+}
+
+.container {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.heart2 {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	text-align: center;
+	transform: translate(-50%, -50%);
+	z-index: 999999;
+}
+
+.heart2 > img {
+	width: 50px;
+	height: auto;
+}
+
+.message {
+	padding: 20px;
+	background-color: #eee;
+	min-width: 400px;
+	height: 75%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 0;
+	overflow: hidden;
+	animation-name: openmsg;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-play-state: paused;
+	animation-fill-mode: forwards;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	border-radius: 5px;
+}
+
+.heart2 > img:hover {
+	animation-name: beat;
+	animation-duration: 2s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-play-state: running;
+}
+
+@keyframes beat {
+	0% {
+		width: 50px;
+	}
+	25% {
+		width: 58px;
+	}
+	30% {
+		width: 50px;
+	}
+	50% {
+		width: 45px;
+	}
+	60% {
+		width: 50px;
+	}
+	75% {
+		width: 58px;
+	}
+	100% {
+		width: 50px;
+	}
+}
+
+@keyframes openmsg {
+	0% {
+		height: 0px;
+		padding: 0px 20px;
+	}
+	100% {
+		height: 75%;
+		padding: 20px 20px;
+	}
+}
+
+@keyframes heartMove {
+	0% {
+		top: 50%
+	}
+	100% {
+		top: 85%;
+		transform: translate(-50%, 0);
+	}
+}
+
+.openNor {
+	animation-direction: normal;
+	animation-play-state: running;
+}
+
+.closeNor {
+	animation-direction: reverse;
+	animation-play-state: running;
+}
+
+.no-anim {
+	animation: none;
+}
+
+.closed {
+	height: 0px;
+	padding: 0px 20px;
+}
+
+.bottom {
+	bottom: 5px;
+}
+
+.openHer {
+	animation-name: heartMove;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-play-state: running;
+	animation-fill-mode: forwards;
+}
+
+.closeHer {
+	animation-name: heartMove;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-play-state: running;
+	animation-direction: reverse;
+	animation-fill-mode: forwards;
+}
+
+.beating > img {
+	animation-name: beat;
+	animation-duration: 2s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-play-state: running;
+}
+
+.openedHer {
+	top: 85%;
+	transform: translate(-50%, 0);
+}
+#content2{
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    pointer-events: none;
+}
+#content2 .message, #content2 .heart2{
+    pointer-events: all;
+    font-size: 20px;
+} 
+#content2 .message{
+	overflow: auto;
+	z-index: 99999;
+}
+/* 内容 */
+
+:root {
+    --theme-color: #285685;
+    --font-color: #2c332e;
+    --shade1: rgba(242, 38, 19, 0.5);
+    --shade2: rgba(0, 255, 255, 0.5);
+    --theme-font: 'VT323', fantasy;
+}
+body {
+    font-family: var(--theme-font);
+    color: var(--font-color);
+}
+div.message::after {
+    content : "|";
+    animation: blinky 1s linear infinite;
+}
+div.message.end::after {
+    content: '';
+}
+div.message div {
+    text-align: end;
+    padding-right: 20px;
+}
+
+#music{
+	position: absolute;
+    top: 0px;
+    right: 0px;
+}
+::-webkit-scrollbar{width:0px;}
+
+/* 图片 */
+#images img {
+	-webkit-transition: all 1.5s ease-out 1.5s ;
+	transition: all 1.5s ease-out 1.5s ;
+	position: absolute;
+	width: 400px;
+	top: calc(35% - 121px);
+	cursor: pointer;
+}
+#images img.left {
+	left: calc(50% - 300px);
+}
+#images img.right {
+	right: 18%;
+}
+#images img:not(.show) {
+	/* display: none; */
+	opacity: 0;
+	pointer-events: none;
+}
